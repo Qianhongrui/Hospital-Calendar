@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+/*首先宣告我們要使用flex佈局*/
+   display:flex;
+ 
+  /*讓我們的flex佈局，由上到下排列*/
+   flex-direction: column;
+ 
+/*高度設定為 可大於但不可小於 整個瀏覽器可視範圍*/
+   min-height:100vh;
+ }
+ .container{
+  /*設置flex-grow: 1，讓它能夠彈性伸展*/
+ flex-grow:1
+ 
+/*以下兩種方式也可以達到一樣效果，flex是三種屬性的縮寫*/
+/*flex: 1等於 flex-grow: 1; flex-shrink: 1; flex-basis: 0%;*/
+ /*flex: auto等於 flex-grow: 1; flex-shrink: 1; flex-basis: auto;*/
+ 
+   /*flex: 1; */
+   /*flex: auto;*/
+ }

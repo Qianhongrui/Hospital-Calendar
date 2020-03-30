@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap - Prebuilt Layout</title>
+
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link href="css/layui.css" type="text/css" rel="stylesheet">
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->    
+	<style>
+		td{
+			text-align: center;
+		}
+		th{
+			text-align: center;
+		}
+		input.center{
+			width:100%;
+			text-align: center;
+		}
+		select.center{
+			width:100%;
+			text-align: center;
+    		text-align-last: center;
+		}
+	</style>
+</head>
+<body>
+<br><br>
+<table width="90%" border="1" align="center">
+  <tbody>
+    <tr>
+      <td> 營業點</td>
+      <td>
+      	
+		<input type="text" id="address" name="address"  class="center">
+	  </td>
+	  <td>日期區間 </td>
+      <td width="20%">
+      	<input type="text" id="date" name="date"  class="center">
+      </td>
+      <td rowspan="3"><button type="button" class="btn btn-sm btn-default">查詢</button></td>
+    </tr>
+    <tr>
+      <td>健管師</td>
+      <td width="20%">
+      	<select class="center">
+ 			<option  selected="true">1</option>
+ 			<option>2</option>
+		</select>
+	  </td>
+      <td>性別(健)</td>
+      <td>
+      	<select class="center">
+ 			<option  selected="true">男</option>
+ 			<option>女</option>
+		</select>
+      </td>
+    </tr>
+    <tr>
+      <td>個案 </td>
+      <td>
+      	<input type="text" id="case" name="case" class="center">
+      </td>
+      <td>性別(個)</td>
+      <td>
+      	<select class="center">
+ 			<option  selected="true">男</option>
+ 			<option>女</option>
+		</select>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<legend style="padding-top: 40px" align="center">資料詳情</legend>
+<center>
+		<!--
+		<a style="font-size: 70px;font-weight: 500">JSON自动分页 <span class="layui-badge layui-bg-blue">DEMO</span></a>
+		<br>-->
+		<div style="width: 90%">
+			<!--
+			<blockquote class="layui-elem-quote">#基于强大的layui 框架,通过扩展nicePage.js实现JSON数据格式的自动表格分页和跳转功能,配置简单,上手速度快，兼容IE5+。</blockquote>
+			<!--以下为两个必须div元素-->
+			<div id="table" align="center"></div>
+			<div id="pageBar" align="center"></div>
+			
+  </div>
+</center>
+
+<!--  
+    <script language="javascript" src="Paging.js"></script>  
+-->  
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.3.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+</body>
+
+
+
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script language="Javascript" src="js/layui.js"></script>
+<script language="Javascript" src="js/nicePage.js"></script>
+<script LANGUAGE="javascript">
+	//标准json格式 目前只支持[{a:b,c:d},{a:b,c:d}]此种格式
+	var json = [{
+		"number": "1",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "2",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "3",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "4",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "5",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "6",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "7",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "8",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "9",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "10",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "11",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "12",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "13",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "14",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "15",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "16",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "17",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "18",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "19",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "20",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "21",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "22",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "23",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "24",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}, {
+		"number": "25",
+		"address": "台北店（台）",
+		"date":"2018-07-18",
+		"time":"10:00~12:00",
+		"doctor":"王建明",
+		"case":"陳孝東"
+	}];
+
+	//nameList与widthList的数组长度要一致
+	var nameList = ['編號', '營業點', '上課日期', '時間', '健管師', '個案'] //table的列名
+	var widthList = [100, 100, 100, 100, 100, 100] //table每列的宽度
+	var widthList = [100, 100, 100, 100, 100, 100] //table每列的宽度
+
+	/**
+	 * 初始化设置nicepage组件    v1.0
+	 *-------------------------------------------------------------
+	 * 进行数据组装,与layui交互进行元素渲染
+	 *-------------------------------------------------------------
+	 * @param    {string}  table     table的div id
+	 * @param    {string}  bar     底部分页的div id
+	 * @param    {int}  limit     每页默认行数
+	 * @param    {string}  color     底部分页的颜色
+	 * @param    {array}  layout     底部分页的布局,具体可参考layui api
+	 *
+	 * @date     2018-10-19
+	 * @author   Thomas.dz <hzdz163@163.com>
+	 */
+	$(function () {
+		nicePage.setCfg({
+			table: 'table',
+			bar: 'pageBar',
+			limit: 20,
+			color: '#1E9FFF',
+			layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+		});
+	});//初始化完成
+</script>
+
+</html>

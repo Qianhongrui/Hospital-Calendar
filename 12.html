@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap - Prebuilt Layout</title>
+
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link href="css/layui.css" type="text/css" rel="stylesheet">
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->    
+	<style>
+		td{
+			text-align: center;
+		}
+		th{
+			text-align: center;
+		}
+		input.center{
+			width:100%;
+			text-align: center;
+		}
+		select.center{
+			width:100%;
+			text-align: center;
+    		text-align-last: center;
+		}
+	</style>
+</head>
+<body>
+<br><br>
+<table width="90%" border="1" align="center">
+  <tbody>
+    <tr>
+      <td>狀態</td>
+      <td>
+      	<select class="center">
+ 			<option  selected="true">啟用</option>
+ 			<option>關閉</option>
+		</select>
+	  </td>
+	  <td>賬號 </td>
+      <td width="20%">
+      	<input type="text" id="account" name="account"  class="center">
+      </td>
+      <td rowspan="3"><button type="button" class="btn btn-sm btn-default">查詢</button></td>
+    </tr>
+    <tr>
+      <td>姓名</td>
+      <td width="20%">
+      	<input type="text" id="name" name="name"  class="center">
+	  </td>
+      <td>性別 </td>
+      <td>
+      	<select class="center">
+ 			<option  selected="true">男</option>
+ 			<option>女</option>
+		</select>
+      </td>
+    </tr>
+    <tr>
+      <td>營業點 </td>
+      <td>
+      	<input type="text" id="address" name="address" class="center">
+      </td>
+      <td>職位</td>
+      <td>
+      	<select class="center">
+ 			<option  selected="true">健管師</option>
+ 			<option>櫃檯</option>
+ 			<option>管理者</option>
+		</select>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<legend style="padding-top: 40px" align="center">資料詳情</legend>
+<center>
+		<!--
+		<a style="font-size: 70px;font-weight: 500">JSON自动分页 <span class="layui-badge layui-bg-blue">DEMO</span></a>
+		<br>-->
+		<div style="width: 90%">
+			<!--
+			<blockquote class="layui-elem-quote">#基于强大的layui 框架,通过扩展nicePage.js实现JSON数据格式的自动表格分页和跳转功能,配置简单,上手速度快，兼容IE5+。</blockquote>
+			<!--以下为两个必须div元素-->
+			<div id="table" align="center"></div>
+			<div id="pageBar" align="center"></div>
+			
+  </div>
+</center>
+
+<!--  
+    <script language="javascript" src="Paging.js"></script>  
+-->  
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.3.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+</body>
+
+
+
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script language="Javascript" src="js/layui.js"></script>
+<script language="Javascript" src="js/nicePage.js"></script>
+<script LANGUAGE="javascript">
+	//标准json格式 目前只支持[{a:b,c:d},{a:b,c:d}]此种格式
+	var json = [{
+		"number": "1",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "2",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "3",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "4",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "5",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "6",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "7",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "8",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "9",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "10",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "11",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "12",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "13",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "14",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "15",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "16",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "17",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "18",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "19",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "20",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "21",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "22",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "23",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "24",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}, {
+		"number": "25",
+		"state": "啟用",
+		"account":"Jyu82jf",
+		"name":"王建明",
+		"sex":"男",
+		"address":"北京（中）",
+		"position":"櫃檯",
+		"modify":"<button type=\"button\" class=\"btn btn-sm btn-default\">修改</button>",
+		"delete":"<button type=\"button\" class=\"btn btn-sm btn-default\">刪除</button>"
+	}];
+
+	//nameList与widthList的数组长度要一致
+	var nameList = ['編號', '狀態', '賬號', '姓名', '性別', '營業點', '職位', '修改', '刪除'] //table的列名
+	var widthList = [100, 100, 100, 100, 100, 100, 100, 100, 100] //table每列的宽度
+	var widthList = [100, 100, 100, 100, 100, 100, 100, 100, 100] //table每列的宽度
+
+	/**
+	 * 初始化设置nicepage组件    v1.0
+	 *-------------------------------------------------------------
+	 * 进行数据组装,与layui交互进行元素渲染
+	 *-------------------------------------------------------------
+	 * @param    {string}  table     table的div id
+	 * @param    {string}  bar     底部分页的div id
+	 * @param    {int}  limit     每页默认行数
+	 * @param    {string}  color     底部分页的颜色
+	 * @param    {array}  layout     底部分页的布局,具体可参考layui api
+	 *
+	 * @date     2018-10-19
+	 * @author   Thomas.dz <hzdz163@163.com>
+	 */
+	$(function () {
+		nicePage.setCfg({
+			table: 'table',
+			bar: 'pageBar',
+			limit: 20,
+			color: '#1E9FFF',
+			layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+		});
+	});//初始化完成
+</script>
+
+</html>
